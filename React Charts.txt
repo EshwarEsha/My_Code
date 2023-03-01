@@ -1,0 +1,436 @@
+// import logo from './logo.svg';
+// import './App.css';
+// import ReactApexChart from 'react-apexcharts';
+// import React from 'react';
+// import { Bar } from 'react-chartjs-2';
+// import LineChart from './Components/LineChart';
+// import Pie from './Components/Pie';
+// import Chart from 'react-apexcharts'
+// import { Line } from 'react-chartjs-2'
+// import {
+//   Chart as ChartJS,
+//   LineElement,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement
+// } from 'chart.js';
+
+// ChartJS.register(
+//   LineElement,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement
+// )
+
+
+// function App () {
+//   const data = {
+      
+//       labels:["May 12","", "May 13","", "May 14","", "May 15","", "May 16","", "May 17","","May 18"],
+//       datasets: [{
+//         data:[8,9, 7.8, 7.9, 6, 8, 7,5,6],
+//         backgroundColor: 'transparent',
+//         borderColor: '#f226c6d',
+//         pointBorderColor: 'transparent',
+//         pointBorderWidth: 4,
+//         tension: 0
+//       }],
+
+      
+//   };
+
+//   const options = {
+//      plugins:{
+//       legend: false
+//      },
+
+ 
+
+//      scales: {
+//       x: {
+//         grid: {
+//           display: false
+//         }
+//       },
+//       y:{
+//         min:1,
+//         max:10,
+//         ticks: {
+//           stepsize: 2,
+//           callback: (value) => value +'K'
+//         },
+//         grid: {
+
+//         }
+//       }
+//      }
+//   };
+
+//   return (
+//     <div style={{width: '500px', height: '500px', marginLeft: '20px'}}>
+//         <Line data={data} options={options}></Line> 
+
+//         {/* <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={350} />  */}
+//         {/* <LineChart></LineChart> */}
+//         <pie></pie>
+       
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// *********************************************************************************************************************************
+
+
+
+
+// This is the code for Bar Chart
+
+// import React, { Component } from "react";
+// import Chart from "react-apexcharts";
+
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       options: {
+//         chart: {
+//           id: "basic-bar"
+//         },
+//         xaxis: {
+//           categories: ["01-02-2023","", "02-02-2023","", "03-02-2023","","04-02-2023", "","05-02-2023","", "06-02-2023","", "07-02-2023","", "08-02-2023","", "09-02-2023","","10-02-2023"]
+//         },
+
+//         yaxis: {
+//           title:{
+//             text: 'OEE'
+//           }
+//         }
+//       },
+//       series: [
+//         {
+//           name: "shift-1",
+//           data: [30, 40, 45, 50, 49, 60, 70, 91,46,45]
+//         },
+
+//         {
+//           name: "shift-2",
+//           data: [25, 62,78,32,87,56,15,66,54,68]
+//         },
+
+//         {
+//           name:"Day",
+//           data:[65,59,74,19,26,35,88,72,94,52]
+//         },
+
+//       ]
+//     };
+//   }
+
+//   render() {
+//     return (
+//              <div>
+//                <Chart
+//                 options={this.state.options}
+//                 series={this.state.series}
+//                 type="bar"
+//                 width='600'
+//                />
+//               </div>
+//            );
+//   }
+// }
+
+// export default App;
+
+// *****************************************************************
+
+// This the code for Line Chart
+
+// import React, { Component } from "react";
+// import Chart from "react-apexcharts";
+
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       options: {
+//         chart: {
+//           id: "basic-bar"
+//         },
+//         xaxis: {
+//           categories: ['BHADRA', 'HARA', 'HARI', 'HAYAGREE', 'KAVERI', 'MADHAVA', 'NARASIMH', 'RAMA (NC)', 'SHARVA', 'TUNGA']
+//         },
+
+//         yaxis: {
+//           title:{
+//             text: 'Achived Quantity',
+//           },
+          
+          
+          
+
+          
+//         }
+
+//       },
+
+      
+//       series: [
+//         {
+//           name: "Shift1-Achived",
+//           data: [30, 40, 45, 50, 49, 60, 70, 91]
+//         },
+//         {
+//           name: "Shift1-Target",
+//           data: []
+//         },
+//         {
+//           name: "Shift2-Achived",
+//           data: [65,85,92,26,75,62,95,52]
+//         },
+//         {
+//           name: "Shift2-Target",
+//           data: []
+//         },
+//         {
+//           name: "Day-Achieved",
+//           data: [45,26,51,45,72,29,87,37]
+//         },
+//         {
+//           name: "Day-Target",
+//           data: []
+//         },
+
+       
+
+//       ],
+
+
+//       scales:{
+//         y:{
+//           min:0
+//         }
+//       }
+      
+//     };
+//   }
+
+//   render() {
+//     return (
+//           <div>
+//             <Chart
+//               options={this.state.options}
+//               series={this.state.series}
+//               type="line" 
+//               width="900"
+//             />
+//           </div>
+       
+//     );
+//   }
+// }
+
+// export default App;
+
+// *********************************************************************************************************************************
+
+// This is the code for mixed chart[Line and Bar]
+
+
+
+// import React, { Component } from "react";
+// import Chart from "react-apexcharts";
+// import ReactApexChart from "react-apexcharts";
+// import { ReactDOM } from "react";
+// import ApexChart from "apexcharts";
+
+// class App extends Component {
+//   constructor(props) {
+//   super(props);
+
+//     this.state = {
+    
+//       series: [{
+//         name: 'Website Blog',
+//         type: 'column',
+//         data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160]
+//       }, {
+//         name: 'Social Media',
+//         type: 'line',
+//         data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16]
+//       }],
+//       options: {
+//         chart: {
+//           height: 350,
+//           type: 'line',
+//         },
+//         stroke: {
+//           width: [0, 4]
+//         },
+//         title: {
+//           text: 'Traffic Sources'
+//         },
+//         dataLabels: {
+//           enabled: true,
+//           enabledOnSeries: [1]
+//         },
+//         labels: ['01 Jan 2001', '02 Jan 2001', '03 Jan 2001', '04 Jan 2001', '05 Jan 2001', '06 Jan 2001', '07 Jan 2001', '08 Jan 2001', '09 Jan 2001', '10 Jan 2001', '11 Jan 2001', '12 Jan 2001'],
+//         xaxis: {
+//           type: 'datetime'
+//         },
+//         yaxis: [{
+//           title: {
+//             text: 'Website Blog',
+//           },
+        
+//         }, {
+//           opposite: true,
+//           title: {
+//             text: 'Social Media'
+//           }
+//         }]
+//       },
+    
+    
+//     };
+//   }
+
+
+
+//   render() {
+//     return (
+      
+
+// <div id="chart">
+// <ReactApexChart options={this.state.options} series={this.state.series} type="line" height={350} />
+// </div>
+
+
+//     );
+//   }
+// }
+
+// const domContainer = document.querySelector('#app');
+// ReactDOM.render(React.createElement(ApexChart), domContainer);
+
+// export default App;
+
+
+
+// *********************************************************************************
+
+// This code is for Donut/Pie Chart
+
+
+
+
+
+
+import React, { Component } from "react";
+import Chart from "react-apexcharts";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      
+        series: [10,20,30,40],
+        chartOptions: {
+        // labels: ['Apple', 'Mango',]
+        },
+
+        options:{
+        chart: {
+          type: 'donut'
+        },
+
+        options: {
+          dataLabels: {
+            enabled: true,
+            formatter: function (val) {
+              return val + "%"
+            }
+            
+          }
+        },
+
+        options: {
+          plotOptions: {
+            pie: {
+              customScale: 0.8
+            }
+          }
+        },
+
+        options: {
+          plotOptions: {
+            donut: {
+              size: 200
+            }
+          }
+        },
+
+        options: {                      
+          plotOptions: {
+            donut: {
+              donut: {
+                size: '65%'
+              }
+            }
+          }
+        },
+
+        options: {
+          plotOptions: {
+            
+              donut: {
+                labels: {
+                  show: true,
+                  name: "Total",
+                  value: 145
+                }
+              }
+           
+          }
+        },
+
+        options: {
+          plotOptions: {
+            pie: {
+              expandOnClick: false
+            }
+          }
+        }
+        
+        
+        
+
+
+      }
+    };    
+  }
+      
+      
+
+  render() {
+    return (
+          <div>
+            <Chart
+              options={this.state.options}
+              series={this.state.series}
+              type="pie" 
+              width="500"
+            />
+          </div>
+       
+    );
+  }
+}
+
+export default App;
+
